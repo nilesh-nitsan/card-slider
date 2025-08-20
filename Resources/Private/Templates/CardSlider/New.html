@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="card-form-container">
+        <h1>Create New Card</h1>
+        
+        <f:form action="create" name="newCard" object="{newCard}" class="card-form">
+            <f:render partial="FormFields" arguments="{card: newCard, action: 'create'}" />
+            
+            <div class="form-actions">
+                <f:form.submit value="Create Card" class="btn btn-primary" />
+                <f:link.action action="list" class="btn btn-secondary">Cancel</f:link.action>
+            </div>
+        </f:form>
+    </div>
+</f:section>
+
+</html>
