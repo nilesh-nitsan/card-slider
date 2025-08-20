@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>General Settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.itemsPerPage>
+                        <TCEforms>
+                            <label>LLL:EXT:card_slider/Resources/Private/Language/locallang_db.xlf:flexform.itemsPerPage</label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                                <eval>int</eval>
+                                <default>10</default>
+                            </config>
+                        </TCEforms>
+                    </settings.itemsPerPage>
+                    <settings.displayMode>
+                        <TCEforms>
+                            <label>LLL:EXT:card_slider/Resources/Private/Language/locallang_db.xlf:flexform.displayMode</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">LLL:EXT:card_slider/Resources/Private/Language/locallang_db.xlf:flexform.displayMode.list</numIndex>
+                                        <numIndex index="1">list</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:card_slider/Resources/Private/Language/locallang_db.xlf:flexform.displayMode.detail</numIndex>
+                                        <numIndex index="1">detail</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>list</default>
+                            </config>
+                        </TCEforms>
+                    </settings.displayMode>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>
