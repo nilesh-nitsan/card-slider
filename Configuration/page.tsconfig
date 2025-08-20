@@ -1,0 +1,5 @@
+# PageTS Configuration for Card Slider
+# This file is automatically included by TYPO3 v13
+# Extension: card_slider
+
+@import "EXT:card_slider/Configuration/page.tsconfig"
