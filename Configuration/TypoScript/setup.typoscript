@@ -1,0 +1,38 @@
+plugin.tx_cardslider_slider {
+    view {
+        templateRootPaths.0 = EXT:card_slider/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_cardslider_slider.view.templateRootPath}
+        partialRootPaths.0 = EXT:card_slider/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_cardslider_slider.view.partialRootPath}
+        layoutRootPaths.0 = EXT:card_slider/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_cardslider_slider.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_cardslider_slider.persistence.storagePid}
+        recursive = {$plugin.tx_cardslider_slider.persistence.recursive}
+    }
+    features {
+        skipDefaultArguments = 1
+        ignoreAllEnableFieldsInBe = 0
+    }
+    mvc {
+        callDefaultActionIfActionCantBeResolved = 1
+    }
+    settings {
+        autoplay = {$plugin.tx_cardslider_slider.settings.autoplay}
+        autoplaySpeed = {$plugin.tx_cardslider_slider.settings.autoplaySpeed}
+        showDots = {$plugin.tx_cardslider_slider.settings.showDots}
+        showArrows = {$plugin.tx_cardslider_slider.settings.showArrows}
+        slidesToShow = {$plugin.tx_cardslider_slider.settings.slidesToShow}
+        slidesToScroll = {$plugin.tx_cardslider_slider.settings.slidesToScroll}
+        infinite = {$plugin.tx_cardslider_slider.settings.infinite}
+        responsive = {$plugin.tx_cardslider_slider.settings.responsive}
+        fade = {$plugin.tx_cardslider_slider.settings.fade}
+        cssEase = {$plugin.tx_cardslider_slider.settings.cssEase}
+        speed = {$plugin.tx_cardslider_slider.settings.speed}
+    }
+}
+
+page.includeCSS.cardSlider = EXT:card_slider/Resources/Public/Css/slider.css
+page.includeJSFooter.slickSlider = EXT:card_slider/Resources/Public/JavaScript/slick.min.js
+page.includeJSFooter.cardSlider = EXT:card_slider/Resources/Public/JavaScript/slider.js
