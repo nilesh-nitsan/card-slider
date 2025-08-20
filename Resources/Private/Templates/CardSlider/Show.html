@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="card-detail">
+        <f:if condition="{card.image}">
+            <div class="card-detail-image">
+                <f:image src="{card.image.uid}" alt="{card.image.alternative}" title="{card.image.title}" class="img-fluid" />
+            </div>
+        </f:if>
+        
+        <div class="card-detail-content">
+            <f:if condition="{card.title}">
+                <h1 class="card-detail-title">{card.title}</h1>
+            </f:if>
+            
+            <f:if condition="{card.description}">
+                <div class="card-detail-description">
+                    {card.description -> f:format.nl2br()}
+                </div>
+            </f:if>
+            
+            <f:if condition="{card.link}">
+                <div class="card-detail-actions">
+                    <f:link.page pageUid="{card.link}" class="btn btn-primary">
+                        <f:if condition="{card.linkText}" then="{card.linkText}" else="Learn More" />
+                    </f:link.page>
+                </div>
+            </f:if>
+            
+            <div class="card-detail-meta">
+                <f:if condition="{card.categories}">
+                    <div class="card-categories">
+                        <span class="meta-label">Categories:</span>
+                        <f:for each="{card.categories}" as="category" iteration="iterator">
+                            <span class="category-tag">{category.title}</span>
+                            <f:if condition="{iterator.isLast}"><f:else>, </f:else></f:if>
+                        </f:for>
+                    </div>
+                </f:if>
+            </div>
+        </div>
+        
+        <div class="card-detail-navigation">
+            <f:link.action action="list" class="btn btn-secondary">← Back to Slider</f:link.action>
+        </div>
+    </div>
+</f:section>
+
+</html>
