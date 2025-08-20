@@ -1,0 +1,63 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="card-slider-container" data-slider-config="{autoplay: true, navigation: true, indicators: true}">
+        <div class="card-slider-wrapper">
+            <div class="card-slider-track" id="slider-{data.uid}">
+                <f:for each="{cards}" as="card" iteration="iterator">
+                    <div class="card-slider-item" data-slide="{iterator.index}">
+                        <div class="card">
+                            <f:if condition="{card.image}">
+                                <div class="card-image">
+                                    <f:image src="{card.image.uid}" alt="{card.image.alternative}" title="{card.image.title}" class="img-fluid" />
+                                </div>
+                            </f:if>
+                            <div class="card-content">
+                                <f:if condition="{card.title}">
+                                    <h3 class="card-title">{card.title}</h3>
+                                </f:if>
+                                <f:if condition="{card.description}">
+                                    <p class="card-description">{card.description -> f:format.nl2br()}</p>
+                                </f:if>
+                                <f:if condition="{card.link}">
+                                    <div class="card-actions">
+                                        <f:link.page pageUid="{card.link}" class="btn btn-primary card-cta">
+                                            <f:if condition="{card.linkText}" then="{card.linkText}" else="Read More" />
+                                        </f:link.page>
+                                    </div>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+        
+        <!-- Navigation Controls -->
+        <div class="slider-controls">
+            <button class="slider-nav slider-prev" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"/>
+                </svg>
+            </button>
+            <button class="slider-nav slider-next" aria-label="Next slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.09l4.58-4.59-4.58-4.59L10 5.5l6 6-6 6z"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Dot Indicators -->
+        <div class="slider-indicators">
+            <f:for each="{cards}" as="card" iteration="iterator">
+                <button class="indicator-dot {f:if(condition: '{iterator.isFirst}', then: 'active')}" 
+                        data-slide="{iterator.index}" 
+                        aria-label="Go to slide {iterator.cycle}"></button>
+            </f:for>
+        </div>
+    </div>
+</f:section>
+
+</html>
