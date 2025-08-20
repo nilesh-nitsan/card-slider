@@ -1,0 +1,75 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="form-fields">
+    <div class="form-group">
+        <f:form.textfield property="title" class="form-control" placeholder="Enter card title" />
+        <label for="title" class="form-label">Title</label>
+        <f:form.validationResults for="card.title">
+            <f:for each="{validationResults.flattenedErrors}" as="errors">
+                <div class="form-error">
+                    <f:for each="{errors}" as="error">
+                        {error.message}
+                    </f:for>
+                </div>
+            </f:for>
+        </f:form.validationResults>
+    </div>
+    
+    <div class="form-group">
+        <f:form.textarea property="description" class="form-control" rows="5" placeholder="Enter card description" />
+        <label for="description" class="form-label">Description</label>
+        <f:form.validationResults for="card.description">
+            <f:for each="{validationResults.flattenedErrors}" as="errors">
+                <div class="form-error">
+                    <f:for each="{errors}" as="error">
+                        {error.message}
+                    </f:for>
+                </div>
+            </f:for>
+        </f:form.validationResults>
+    </div>
+    
+    <div class="form-group">
+        <f:form.upload property="image" class="form-control" accept="image/*" />
+        <label for="image" class="form-label">Image</label>
+        <div class="form-help">Supported formats: JPG, PNG, WebP. Max size: 5MB</div>
+        <f:if condition="{card.image}">
+            <div class="current-image">
+                <f:image src="{card.image.uid}" alt="Current image" width="200" />
+                <span class="current-image-name">{card.image.name}</span>
+            </div>
+        </f:if>
+    </div>
+    
+    <div class="form-group">
+        <f:form.textfield property="linkText" class="form-control" placeholder="Button text (optional)" />
+        <label for="linkText" class="form-label">Link Text</label>
+    </div>
+    
+    <div class="form-group">
+        <f:form.textfield property="link" class="form-control" placeholder="Page ID or URL" />
+        <label for="link" class="form-label">Link Target</label>
+        <div class="form-help">Enter a page ID or external URL</div>
+    </div>
+    
+    <div class="form-group">
+        <f:form.select property="categories" options="{categories}" optionValueField="uid" optionLabelField="title" multiple="1" class="form-control" />
+        <label for="categories" class="form-label">Categories</label>
+        <div class="form-help">Hold Ctrl/Cmd to select multiple categories</div>
+    </div>
+    
+    <div class="form-group">
+        <div class="form-check">
+            <f:form.checkbox property="hidden" value="1" class="form-check-input" />
+            <label for="hidden" class="form-check-label">Hide this card</label>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <f:form.textfield property="sortOrder" class="form-control" placeholder="0" />
+        <label for="sortOrder" class="form-label">Sort Order</label>
+        <div class="form-help">Lower numbers appear first</div>
+    </div>
+</div>
+
+</html>
