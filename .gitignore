@@ -1,0 +1,12 @@
+.idea
+.vscode
+.DS_Store
+node_modules/
+*.cache
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
