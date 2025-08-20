@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2024-01-01T00:00:00Z" product-name="card_slider">
+        <header/>
+        <body>
+            <!-- Frontend Labels -->
+            <trans-unit id="slider.title">
+                <source>Card Slider</source>
+            </trans-unit>
+            <trans-unit id="slider.previous">
+                <source>Previous</source>
+            </trans-unit>
+            <trans-unit id="slider.next">
+                <source>Next</source>
+            </trans-unit>
+            <trans-unit id="slider.play">
+                <source>Play</source>
+            </trans-unit>
+            <trans-unit id="slider.pause">
+                <source>Pause</source>
+            </trans-unit>
+            <trans-unit id="slider.slide">
+                <source>Slide</source>
+            </trans-unit>
+            <trans-unit id="slider.of">
+                <source>of</source>
+            </trans-unit>
+            <trans-unit id="slider.goto_slide">
+                <source>Go to slide</source>
+            </trans-unit>
+            
+            <!-- Card Labels -->
+            <trans-unit id="card.read_more">
+                <source>Read More</source>
+            </trans-unit>
+            <trans-unit id="card.learn_more">
+                <source>Learn More</source>
+            </trans-unit>
+            <trans-unit id="card.view_details">
+                <source>View Details</source>
+            </trans-unit>
+            <trans-unit id="card.external_link">
+                <source>External Link</source>
+            </trans-unit>
+            
+            <!-- Accessibility Labels -->
+            <trans-unit id="accessibility.slider_controls">
+                <source>Slider Controls</source>
+            </trans-unit>
+            <trans-unit id="accessibility.slide_indicators">
+                <source>Slide Indicators</source>
+            </trans-unit>
+            <trans-unit id="accessibility.current_slide">
+                <source>Current slide</source>
+            </trans-unit>
+            <trans-unit id="accessibility.image_alt">
+                <source>Slide image</source>
+            </trans-unit>
+            
+            <!-- Error Messages -->
+            <trans-unit id="error.no_cards">
+                <source>No cards available to display.</source>
+            </trans-unit>
+            <trans-unit id="error.invalid_configuration">
+                <source>Invalid slider configuration.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
