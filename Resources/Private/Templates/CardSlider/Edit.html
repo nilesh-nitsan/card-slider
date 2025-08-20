@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="card-form-container">
+        <h1>Edit Card</h1>
+        
+        <f:form action="update" name="card" object="{card}" class="card-form">
+            <f:render partial="FormFields" arguments="{card: card, action: 'update'}" />
+            
+            <div class="form-actions">
+                <f:form.submit value="Update Card" class="btn btn-primary" />
+                <f:link.action action="show" arguments="{card: card}" class="btn btn-secondary">View Card</f:link.action>
+                <f:link.action action="list" class="btn btn-secondary">Cancel</f:link.action>
+            </div>
+        </f:form>
+    </div>
+</f:section>
+
+</html>
